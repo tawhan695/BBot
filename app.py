@@ -36,7 +36,7 @@ class App():
         self.setting_exit_hero = False
         self.save_ = False
         self.setting_center = False
-        self.KeySave = [(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
+        self.KeySave = [(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)]
         with open(os.path.abspath('{}\config.txt'.format(self.path)).replace("\\", "/"), 'w') as f:
                 f.write(json.dumps(self.KeySave))
     def run(self):
@@ -82,18 +82,18 @@ class App():
                 print(n)
                 n-=1
                 time.sleep(1)
-            for i in range(100):
-                pyautogui.scroll(-50) 
-                pyautogui.moveTo(self.KeySave[5])
+            # for i in range(100):
+            #     pyautogui.scroll(-50) 
+            #     pyautogui.moveTo(self.KeySave[5])
                 
             time.sleep(1.5)
             pyautogui.moveTo(self.KeySave[5])
-            for i in range(50):
+            # for i in range(50):
                 # pyautogui.scroll(-30) 
-                pyautogui.moveTo(self.KeySave[5])
-                time.sleep(0.1)
-                pyautogui.click(self.KeySave[5])
-                time.sleep(0.1)
+            pyautogui.moveTo(self.KeySave[5])
+            time.sleep(0.1)
+            pyautogui.click(self.KeySave[5])
+            time.sleep(0.1)
             n = random.randint(2,3)
             for i in range(n):
                 print(n)
@@ -110,10 +110,12 @@ class App():
             # pyautogui.doubleClick(self.KeySave[6])
             n =60 * self.CD
             h=n-50
-            for i in range(n):
-                n-=1
+            for t in range(n):
+                mins, secs = divmod(t, 60)
+                timer = '{:02d}:{:02d}'.format(mins, secs)
+                print(timer, end="\r")
                 time.sleep(1)
-                print('Work in :',n)
+                t -= 1
                 if n == h:
                     h=n-50
                     # pyautogui.click(self.KeySave[6])
