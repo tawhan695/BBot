@@ -11,10 +11,13 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
-        st = self.Login()
-        print('api',st[0])  
-        if st[0]:
-            self.Init(MainWindow)
+        # st = self.Login()
+        # print('api',st[0])  
+        # if st[0]:
+        #     self.Init(MainWindow)
+            
+        #test
+        self.Init(MainWindow)
 
     
     def Login(self):
@@ -22,11 +25,11 @@ class MainWindow(QMainWindow):
           
         return api
         
-    def Init(self,MainWindow):
-        MainWindow.setWindowTitle("BeBot Dashbord")
-        MainWindow.setAutoFillBackground(True)
-        MainWindow.setWindowOpacity(0.9)
-        MainWindow.setWindowModality(QtCore.Qt.ApplicationModal)
+    def Init(self,QWindow):
+        QWindow.setWindowTitle("BeBot Dashbord")
+        QWindow.setAutoFillBackground(True)
+        QWindow.setWindowOpacity(0.9)
+        QWindow.setWindowModality(QtCore.Qt.ApplicationModal)
 
 
 
